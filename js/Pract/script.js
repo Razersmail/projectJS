@@ -31,14 +31,13 @@
  } else {
      console.log("Произошла ошибка");
  }
- let a = "",
-     b = "";
+ 
  for (let i = 0; i < 2; i++){
-    a = "";
-    b = "";
-     while (a == "" || b == "" || a == null || b == null || a.length > 50){
-         a = prompt('Один из последних просмотренных фильмов?', "");
-         b = prompt('На сколько оцените его?', ""); 
+    let a = prompt('Один из последних просмотренных фильмов?', ""),
+        b = prompt('На сколько оцените его?', ""); 
+     if (a != "" && b != "" && a != null && b != null && a.length < 50){
+        personalMovieDB.movies[a] = b;
+     }else {
+         i--;
      }
-     personalMovieDB.movies[a] = b;
- }
+ } 
