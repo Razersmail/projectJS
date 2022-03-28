@@ -33,11 +33,11 @@
  }
  
  for (let i = 0; i < 2; i++){
-    let a = prompt('Один из последних просмотренных фильмов?', ""),
+    let a = "",
+        b = "";
+    do {
+        a = prompt('Один из последних просмотренных фильмов?', "");
         b = prompt('На сколько оцените его?', ""); 
-     if (a != "" && b != "" && a != null && b != null && a.length < 50){
-        personalMovieDB.movies[a] = b;
-     }else {
-         i--;
-     }
+    }
+    while (a == "" || b == "" || a == null || b == null || a.length > 50);
  } 
